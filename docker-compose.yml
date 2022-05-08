@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  postgres:
+    image: postgres:12
+    ports:
+      - "5455:5432"
+    environment:
+      POSTGRES_DB: "conference"
+      POSTGRES_USER: "conference"
+      POSTGRES_PASSWORD: "conference"
+    volumes:
+      - ./src/main/resources/docker/:/docker-entrypoint-initdb.d/
