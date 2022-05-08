@@ -32,32 +32,32 @@ values ('S7f3dz14g1','krystianszwedo@wp.pl');
 INSERT INTO Users(login,email)
 values ('antek','ant@wp.pl');
 
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('10.00 - 11-45','First','Java od zera.');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('12.00 - 13-45','First','Co to jest Hiberante');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('14.00 - 15-45','First','Podstawy springa');
 
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('10.00 - 11-45','Second','C# od zera.');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('12.00 - 13-45','Second','C vs C++');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('14.00 - 15-45','Second','Piszemy czysty kod');
 
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('10.00 - 11-45','Third','Python od zera.');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('12.00 - 13-45','Third','Tworzymy projekt MVC');
-INSERT INTO Prelection(times,thematic_paths_title,title)
+INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('14.00 - 15-45','Third','Co to jest django?');
 
 INSERT INTO Reservations(user_id,lecture_id)
 values ((SELECT id FROM Users where login = 'antek'),
-    (SELECT id FROM Prelection where title = 'Co to jest django?'));
+    (SELECT id FROM Lecture where subject = 'Co to jest django?'));
 
 INSERT INTO Reservations(user_id,lecture_id)
 values ((SELECT id FROM Users where login = 'S7f3dz14g1'),
-    (SELECT id FROM Prelection where title = 'Python od zera.'));
+    (SELECT id FROM Lecture where subject = 'Python od zera.'));
 
