@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS Users(
     UNIQUE(email)
     );
 
-CREATE TABLE IF NOT EXISTS Prelection(
+CREATE TABLE IF NOT EXISTS Lecture(
     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     times    varchar(30) not null,
-    title varchar (30)not null,
+    thematic_paths_title varchar (30)not null,
     subject  varchar (30)not null
     );
 
