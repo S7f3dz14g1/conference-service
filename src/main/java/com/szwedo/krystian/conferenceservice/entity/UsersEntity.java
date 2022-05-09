@@ -6,15 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
 
-@Entity(name = "Reservations")
+@Entity(name = "Users")
 @AllArgsConstructor
+@Builder
 @NoArgsConstructor
 @Setter
 @Getter
-@Builder
-public class ReservationEntity {
+public class UsersEntity {
   @Id
   private UUID id;
-  private UUID user_id;
-  private UUID lecture_id;
+  private String login;
+  private String email;
 }

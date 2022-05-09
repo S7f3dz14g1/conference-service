@@ -1,7 +1,12 @@
 package com.szwedo.krystian.conferenceservice.service;
 
 import com.szwedo.krystian.conferenceservice.dao.LectureRepository;
+import com.szwedo.krystian.conferenceservice.dao.ReservationRepository;
+import com.szwedo.krystian.conferenceservice.dao.UsersRepository;
 import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
+import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
+import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
+import com.szwedo.krystian.conferenceservice.exception.UserNotFoundException;
 import com.szwedo.krystian.conferenceservice.model.ThematicPaths;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,10 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -22,28 +24,78 @@ import static org.mockito.Mockito.when;
 class LectureServiceImplTest {
 
   @InjectMocks
-  private  LectureServiceImpl service;
+  private LectureServiceImpl service;
 
   @Mock
-  private LectureRepository repository;
+  private LectureRepository lectureRepository;
+
+  @Mock
+  private UsersRepository usersRepository;
+
+  @Mock
+  private ReservationRepository reservationRepository;
 
   @Test
-  public void should_return_the_list_of_ThematicPath(){
+  public void should_return_the_list_of_ThematicPath() {
     //given
-    Map<String,String>lectures=new HashMap<>();
-    lectures.put("time","title");
-    List<ThematicPaths> expectedResult=List.of(ThematicPaths.builder()
+    Map<String, String> lectures = new HashMap<>();
+    lectures.put("time", "title");
+    List<ThematicPaths> expectedResult = List.of(ThematicPaths.builder()
         .title("thematicPathsTitle")
         .lecture(lectures)
         .build());
     //when
-    when(repository.findAll()).thenReturn(List.of(LectureEntity.builder()
+    when(lectureRepository.findAll()).thenReturn(List.of(LectureEntity.builder()
         .id(UUID.randomUUID())
-        .title("title")
+        .subject("title")
         .thematicPathsTitle("thematicPathsTitle")
         .times("time")
         .build()));
     //then
-  assertEquals(expectedResult,service.getConferenceInformation());
+    assertEquals(expectedResult, service.getConferenceInformation());
+  }
+
+  @Test
+  public void should_throw_UserNotFoundException_when_user_does_not_exist() {
+    //given
+    String login = "login";
+    //when
+    when(usersRepository.findUsersEntityByLogin(login)).thenReturn(Optional.empty());
+    //then
+    assertThrows(UserNotFoundException.class, () -> service.getLectureByLogin(login));
+  }
+
+  @Test
+  public void should_return_the_list_of_lecture_by_login_when_user_exists() {
+    //given
+    String login = "login";
+    UsersEntity user = UsersEntity.builder()
+        .id(UUID.randomUUID())
+        .login(login)
+        .email("email")
+        .build();
+    UUID lecturesId = UUID.randomUUID();
+    ReservationEntity reservation = ReservationEntity.builder()
+        .id(UUID.randomUUID())
+        .lecture_id(lecturesId)
+        .user_id(user.getId())
+        .build();
+    LectureEntity lecture = LectureEntity.builder()
+        .id(lecturesId)
+        .subject("Subject")
+        .times("times")
+        .thematicPathsTitle("paths")
+        .build();
+    //when
+    when(usersRepository.findUsersEntityByLogin(login)).thenReturn(Optional.of(user));
+    when(reservationRepository.findAllByUserId(user.getId())).thenReturn(List.of(reservation));
+    when(lectureRepository.findById(lecturesId)).thenReturn(Optional.of(lecture));
+    //then
+    assertEquals(List.of(lecture).size(),service.getLectureByLogin(login).size());
+    assertEquals(List.of(lecture).get(0).getId(),service.getLectureByLogin(login).get(0).getId());
+    assertEquals(List.of(lecture).get(0).getSubject(),service.getLectureByLogin(login).get(0).getSubject());
+    assertEquals(List.of(lecture).get(0).getThematicPathsTitle(),service.getLectureByLogin(login).get(0).getThematicPathsTitle());
+    assertEquals(List.of(lecture).get(0).getTimes(),service.getLectureByLogin(login).get(0).getTimes());
+
   }
 }

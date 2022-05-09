@@ -18,7 +18,7 @@ import java.util.UUID;
 public class LectureEntity{
   @Id
   UUID id;
-  String title;
+  String subject;
   @Column(name = "thematic_paths_title")
   String thematicPathsTitle;
   String times;
