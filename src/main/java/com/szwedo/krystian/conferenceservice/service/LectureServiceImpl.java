@@ -47,24 +47,25 @@ public class LectureServiceImpl implements LectureService {
   @Override
   public List<LectureEntity> getLectureByLogin(String login) {
     Optional<UsersEntity> user = usersRepository.findUsersEntityByLogin(login);
-    if (user.isPresent()) {
-      List<UUID> lecturesId = getLecturesIdByUserId(user.get().getId());
-      List<Optional<LectureEntity>> lectureEntities = lecturesId.stream().map(lectureRepository::findById).toList();
-      return mapToLectureEntities(lectureEntities);
-    } else {
-      throw new UserNotFoundException(login);
-    }
+    return user.map(this::getUserLectures)
+        .orElseThrow(() -> new UserNotFoundException(login));
   }
 
-  private List<LectureEntity> mapToLectureEntities(List<Optional<LectureEntity>> lectureEntities) {
+  private List<LectureEntity> getUserLectures(UsersEntity user) {
+    List<UUID> lecturesId = getLecturesIdByUserId(user.getId());
+    List<LectureEntity> lectureEntities = lectureRepository.getAllByIdIsIn(lecturesId);
+    return mapToLectureEntities(lectureEntities);
+  }
+
+  private List<LectureEntity> mapToLectureEntities(List<LectureEntity> lectureEntities) {
     return lectureEntities
         .stream()
         .map(l -> LectureEntity
             .builder()
-            .id(l.get().getId())
-            .subject(l.get().getSubject())
-            .thematicPathsTitle(l.get().getThematicPathsTitle())
-            .times(l.get().getTimes())
+            .id(l.getId())
+            .subject(l.getSubject())
+            .thematicPathsTitle(l.getThematicPathsTitle())
+            .times(l.getTimes())
             .build())
         .toList();
   }
@@ -73,8 +74,7 @@ public class LectureServiceImpl implements LectureService {
     return reservationRepository
         .findAllByUserId(userID)
         .stream()
-        .map(ReservationEntity::getLecture_id)
+        .map(ReservationEntity::getLectureId)
         .toList();
   }
-
 }

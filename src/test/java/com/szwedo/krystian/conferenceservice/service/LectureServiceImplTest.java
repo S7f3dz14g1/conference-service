@@ -77,8 +77,8 @@ class LectureServiceImplTest {
     UUID lecturesId = UUID.randomUUID();
     ReservationEntity reservation = ReservationEntity.builder()
         .id(UUID.randomUUID())
-        .lecture_id(lecturesId)
-        .user_id(user.getId())
+        .lectureId(lecturesId)
+        .userId(user.getId())
         .build();
     LectureEntity lecture = LectureEntity.builder()
         .id(lecturesId)

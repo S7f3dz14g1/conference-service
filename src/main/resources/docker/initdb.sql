@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS Users(
     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     login    varchar(30) not null,
     email varchar (30)not null,
-    UNIQUE(email)
+    UNIQUE(login)
     );
 
 CREATE TABLE IF NOT EXISTS Lecture(

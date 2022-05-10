@@ -3,6 +3,8 @@ package com.szwedo.krystian.conferenceservice.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
@@ -14,7 +16,8 @@ import java.util.UUID;
 @Builder
 public class ReservationEntity {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private UUID id;
-  private UUID user_id;
-  private UUID lecture_id;
+  private UUID userId;
+  private UUID lectureId;
 }

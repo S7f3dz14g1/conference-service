@@ -15,6 +15,7 @@ import java.util.UUID;
 @Setter
 @Builder
 @AllArgsConstructor
+@ToString
 public class LectureEntity{
   @Id
   UUID id;
