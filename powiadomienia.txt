@@ -1,0 +1,59 @@
+data wysłania  2022-05-10 
+doS7f3dz14g1
+Zapisałeś się na prelekcje LectureEntity(id=c638fe88-c72a-4b92-96ee-1eeec50adfe2, subject=Co to jest Hiberante, thematicPathsTitle=First, times=12.00 - 13-45)data wysłania  2022-05-10 
+doS7f3dz14g1
+Zapisałeś się na prelekcje LectureEntity(id=919159ff-dc78-4be8-be76-06ffb0bb3f0e, subject=Podstawy springa, thematicPathsTitle=First, times=14.00 - 15-45)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=6f7d74ed-709f-4cdc-adc8-fc29249104e5, subject=sub, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=e6c1bbd4-52ad-4853-a2fb-fad771e144af, subject=sub, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=0697d52b-c504-4478-ac8a-ba63f950f81b, subject=sub, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=0b1342a0-f8e7-49eb-a00b-0f563b860d4d, subject=sub, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=5e5e2910-d47e-4fec-badc-dd636c76b5bd, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=a2e7fd0a-f895-471c-a50d-85dbf7ae3732, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=6a969421-55de-4c66-81e9-f1b537b2eda0, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=292feafa-fc64-49bd-b716-4cd58218bcb3, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=a715ea9a-c233-4bf7-ae6f-9c0f125491a7, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=b852ef20-ced9-4c81-8109-95e82bd20640, subject=title, thematicPathsTitle=title, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=4ba51049-fd6f-4ff0-8e0e-8fe08c117075, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=a3f9267c-ec4e-4ea2-85bd-03a6ce104b07, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=6d137cf7-8632-4238-ab30-e3046ca08b66, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=3e9c3b24-a574-4239-8cb1-ce7cad2f46e7, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=fb9fc418-3897-44ba-ad7d-a7394c42a1e1, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=80ee74eb-cc80-4a4b-8869-71c32bfc154b, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=3886f2d7-9185-4be8-a575-b593cd382d07, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-10 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=291667e2-52ab-4133-810d-b2e64b3c1898, subject=title, thematicPathsTitle=t, times=tim)

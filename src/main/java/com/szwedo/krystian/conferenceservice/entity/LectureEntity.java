@@ -16,7 +16,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @ToString
-public class LectureEntity{
+public class LectureEntity {
   @Id
   UUID id;
   String subject;

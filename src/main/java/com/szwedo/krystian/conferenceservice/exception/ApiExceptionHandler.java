@@ -18,6 +18,34 @@ public class ApiExceptionHandler {
     return new ResponseEntity<>(apiException, status);
   }
 
+  @ExceptionHandler(value = {LectureNotFoundException.class})
+  ResponseEntity<Object> handleLectureNotFoundException(LectureNotFoundException e) {
+    HttpStatus status = HttpStatus.NOT_FOUND;
+    ApiException apiException = getApiException(status, e.getMessage());
+    return new ResponseEntity<>(apiException, status);
+  }
+
+  @ExceptionHandler(value = {UserEntityExistsException.class})
+  ResponseEntity<Object> handleUserEntityExistsException(UserEntityExistsException e) {
+    HttpStatus status = HttpStatus.CONFLICT;
+    ApiException apiException = getApiException(status, e.getMessage());
+    return new ResponseEntity<>(apiException, status);
+  }
+
+  @ExceptionHandler(value = {LectureIsFullyBookedException.class})
+  ResponseEntity<Object> handleLectureIsFullyBookedException(LectureIsFullyBookedException e) {
+    HttpStatus status = HttpStatus.CONFLICT;
+    ApiException apiException = getApiException(status, e.getMessage());
+    return new ResponseEntity<>(apiException, status);
+  }
+
+  @ExceptionHandler(value = {ReservationExistsException.class})
+  ResponseEntity<Object> handleReservationExistsException(ReservationExistsException e) {
+    HttpStatus status = HttpStatus.CONFLICT;
+    ApiException apiException = getApiException(status, e.getMessage());
+    return new ResponseEntity<>(apiException, status);
+  }
+
   private ApiException getApiException(HttpStatus status, String message) {
     return ApiException.builder()
         .message(message)

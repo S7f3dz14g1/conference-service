@@ -16,12 +16,12 @@ class LectureController {
   private final LectureService service;
 
   @GetMapping("/")
-  public List<ThematicPaths> getConferenceInformation(){
+  public List<ThematicPaths> getConferenceInformation() {
     return service.getConferenceInformation();
   }
 
-  @GetMapping("/{nick}")
-  public List<LectureEntity> getLecturesByLogin(@PathVariable("nick") String login){
-    return service.getLectureByLogin(login);
+  @GetMapping("/{login}")
+  public List<LectureEntity> getLecturesByLogin(@PathVariable("login") String login) {
+    return service.getLecturesByLogin(login);
   }
 }

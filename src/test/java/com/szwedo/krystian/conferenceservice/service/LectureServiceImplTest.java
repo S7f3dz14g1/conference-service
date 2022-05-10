@@ -62,7 +62,7 @@ class LectureServiceImplTest {
     //when
     when(usersRepository.findUsersEntityByLogin(login)).thenReturn(Optional.empty());
     //then
-    assertThrows(UserNotFoundException.class, () -> service.getLectureByLogin(login));
+    assertThrows(UserNotFoundException.class, () -> service.getLecturesByLogin(login));
   }
 
   @Test
@@ -89,13 +89,13 @@ class LectureServiceImplTest {
     //when
     when(usersRepository.findUsersEntityByLogin(login)).thenReturn(Optional.of(user));
     when(reservationRepository.findAllByUserId(user.getId())).thenReturn(List.of(reservation));
-    when(lectureRepository.findById(lecturesId)).thenReturn(Optional.of(lecture));
+    when(lectureRepository.getAllByIdIsIn(List.of(lecturesId))).thenReturn(List.of(lecture));
     //then
-    assertEquals(List.of(lecture).size(),service.getLectureByLogin(login).size());
-    assertEquals(List.of(lecture).get(0).getId(),service.getLectureByLogin(login).get(0).getId());
-    assertEquals(List.of(lecture).get(0).getSubject(),service.getLectureByLogin(login).get(0).getSubject());
-    assertEquals(List.of(lecture).get(0).getThematicPathsTitle(),service.getLectureByLogin(login).get(0).getThematicPathsTitle());
-    assertEquals(List.of(lecture).get(0).getTimes(),service.getLectureByLogin(login).get(0).getTimes());
+    assertEquals(List.of(lecture).size(),service.getLecturesByLogin(login).size());
+    assertEquals(List.of(lecture).get(0).getId(),service.getLecturesByLogin(login).get(0).getId());
+    assertEquals(List.of(lecture).get(0).getSubject(),service.getLecturesByLogin(login).get(0).getSubject());
+    assertEquals(List.of(lecture).get(0).getThematicPathsTitle(),service.getLecturesByLogin(login).get(0).getThematicPathsTitle());
+    assertEquals(List.of(lecture).get(0).getTimes(),service.getLecturesByLogin(login).get(0).getTimes());
 
   }
 }

@@ -14,7 +14,7 @@ public interface LectureRepository extends CrudRepository<LectureEntity, UUID> {
 
   Optional<LectureEntity> findLectureEntityBySubject(String subject);
 
-  List<LectureEntity>  findLectureEntitiesByTimes(String times);
+  List<LectureEntity> findLectureEntitiesByTimes(String times);
 
   List<LectureEntity> getAllByIdIsIn(List<UUID> lectureIds);
 }

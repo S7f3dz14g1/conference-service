@@ -8,5 +8,5 @@ public interface LectureService {
 
   List<ThematicPaths> getConferenceInformation();
 
-  List<LectureEntity> getLectureByLogin(String login);
+  List<LectureEntity> getLecturesByLogin(String login);
 }

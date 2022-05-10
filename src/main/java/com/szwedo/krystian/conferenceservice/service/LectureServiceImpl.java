@@ -45,7 +45,7 @@ public class LectureServiceImpl implements LectureService {
   }
 
   @Override
-  public List<LectureEntity> getLectureByLogin(String login) {
+  public List<LectureEntity> getLecturesByLogin(String login) {
     Optional<UsersEntity> user = usersRepository.findUsersEntityByLogin(login);
     return user.map(this::getUserLectures)
         .orElseThrow(() -> new UserNotFoundException(login));
