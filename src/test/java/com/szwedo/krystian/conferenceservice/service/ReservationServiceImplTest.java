@@ -7,10 +7,7 @@ import com.szwedo.krystian.conferenceservice.dao.UsersRepository;
 import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
 import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
-import com.szwedo.krystian.conferenceservice.exception.LectureIsFullyBookedException;
-import com.szwedo.krystian.conferenceservice.exception.LectureNotFoundException;
-import com.szwedo.krystian.conferenceservice.exception.ReservationExistsException;
-import com.szwedo.krystian.conferenceservice.exception.UserEntityExistsException;
+import com.szwedo.krystian.conferenceservice.exception.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -181,4 +178,31 @@ class ReservationServiceImplTest {
         .build();
   }
 
+  @Test
+  public void should_throw_UnableToCancelReservationException_when_data_are_incorrect() {
+    //given
+    UUID userId = UUID.randomUUID();
+    UUID reservationId = UUID.randomUUID();
+    //when
+    when(reservationRepository.deleteByIdAndUserId(reservationId, userId)).thenReturn(0);
+    //then
+    assertThrows(UnableToCancelReservationException.class, () ->
+        service.cancelReservation(reservationId, userId));
+  }
+
+  @Test
+  public void should_cancel_reservation_when_data_are_correct(){
+    //given
+    UUID userId = UUID.randomUUID();
+    UUID reservationId = UUID.randomUUID();
+    ArgumentCaptor<UUID> argumentUser=ArgumentCaptor.forClass(UUID.class);
+    ArgumentCaptor<UUID> argumentReservation=ArgumentCaptor.forClass(UUID.class);
+    //when
+    when(reservationRepository.deleteByIdAndUserId(reservationId, userId)).thenReturn(1);
+    service.cancelReservation(reservationId,userId);
+    //then
+    verify(reservationRepository).deleteByIdAndUserId(argumentReservation.capture(),argumentUser.capture());
+    assertEquals(argumentReservation.getValue(),reservationId);
+    assertEquals(argumentUser.getValue(),userId);
+  }
 }

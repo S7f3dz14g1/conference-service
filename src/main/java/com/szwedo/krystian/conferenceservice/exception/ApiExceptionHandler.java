@@ -18,6 +18,13 @@ public class ApiExceptionHandler {
     return new ResponseEntity<>(apiException, status);
   }
 
+  @ExceptionHandler(value = {UnableToCancelReservationException.class})
+  ResponseEntity<Object> handleUnableToCancelReservationException(UnableToCancelReservationException e) {
+    HttpStatus status = HttpStatus.NOT_FOUND;
+    ApiException apiException = getApiException(status, e.getMessage());
+    return new ResponseEntity<>(apiException, status);
+  }
+
   @ExceptionHandler(value = {LectureNotFoundException.class})
   ResponseEntity<Object> handleLectureNotFoundException(LectureNotFoundException e) {
     HttpStatus status = HttpStatus.NOT_FOUND;

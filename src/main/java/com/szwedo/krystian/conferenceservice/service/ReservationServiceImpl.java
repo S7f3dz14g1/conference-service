@@ -7,10 +7,7 @@ import com.szwedo.krystian.conferenceservice.dao.UsersRepository;
 import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
 import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
-import com.szwedo.krystian.conferenceservice.exception.LectureIsFullyBookedException;
-import com.szwedo.krystian.conferenceservice.exception.LectureNotFoundException;
-import com.szwedo.krystian.conferenceservice.exception.ReservationExistsException;
-import com.szwedo.krystian.conferenceservice.exception.UserEntityExistsException;
+import com.szwedo.krystian.conferenceservice.exception.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -80,5 +77,12 @@ class ReservationServiceImpl implements ReservationService {
         .lectureId(lecture.getId())
         .userId(usersEntity.getId())
         .build());
+  }
+
+  @Override
+  public void cancelReservation(UUID reservationId, UUID userId) {
+    var result =reservationRepository.deleteByIdAndUserId(reservationId,userId);
+    if(result==0)
+      throw new UnableToCancelReservationException();
   }
 }
