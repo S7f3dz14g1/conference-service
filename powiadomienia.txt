@@ -78,3 +78,6 @@ Zapisałeś się na prelekcje LectureEntity(id=e4670f67-cc1b-4c0e-a93e-be1a23c3f
 data wysłania  2022-05-11 
 do login
 Zapisałeś się na prelekcje LectureEntity(id=5f241637-1be0-4067-94a1-1f23dbfc705c, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=d2018de1-55cf-4fba-b92e-df6e6fdaa0da, subject=title, thematicPathsTitle=t, times=tim)
