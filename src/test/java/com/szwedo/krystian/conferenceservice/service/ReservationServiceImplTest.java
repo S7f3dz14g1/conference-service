@@ -179,30 +179,71 @@ class ReservationServiceImplTest {
   }
 
   @Test
-  public void should_throw_UnableToCancelReservationException_when_data_are_incorrect() {
+  public void should_throw_UnableToCancelReservationException_when_user_does_not_exist() {
     //given
-    UUID userId = UUID.randomUUID();
-    UUID reservationId = UUID.randomUUID();
+    String login = "login";
+    String email = "email";
+    String lectureSubject="subject";
     //when
-    when(reservationRepository.deleteByIdAndUserId(reservationId, userId)).thenReturn(0);
+    when(usersRepository.findUsersEntityByLoginAndEmail(login,email)).thenReturn(Optional.empty());
     //then
     assertThrows(UnableToCancelReservationException.class, () ->
-        service.cancelReservation(reservationId, userId));
+        service.cancelReservation(email,login,lectureSubject));
   }
 
   @Test
-  public void should_cancel_reservation_when_data_are_correct(){
+  public void should_throw_UnableToCancelReservationException_when_lecture_does_not_exist() {
     //given
-    UUID userId = UUID.randomUUID();
-    UUID reservationId = UUID.randomUUID();
-    ArgumentCaptor<UUID> argumentUser=ArgumentCaptor.forClass(UUID.class);
-    ArgumentCaptor<UUID> argumentReservation=ArgumentCaptor.forClass(UUID.class);
+    String login = "login";
+    String email = "email";
+    String lectureSubject="subject";
+    UsersEntity user = UsersEntity.builder().id(UUID.randomUUID()).email(email).login(login).build();
     //when
-    when(reservationRepository.deleteByIdAndUserId(reservationId, userId)).thenReturn(1);
-    service.cancelReservation(reservationId,userId);
+    when(usersRepository.findUsersEntityByLoginAndEmail(login,email)).thenReturn(Optional.of(user));
+    when(lectureRepository.findLectureEntityBySubject(lectureSubject)).thenReturn(Optional.empty());
     //then
-    verify(reservationRepository).deleteByIdAndUserId(argumentReservation.capture(),argumentUser.capture());
-    assertEquals(argumentReservation.getValue(),reservationId);
-    assertEquals(argumentUser.getValue(),userId);
+    assertThrows(UnableToCancelReservationException.class, () ->
+        service.cancelReservation(email,login,lectureSubject));
+  }
+
+  @Test
+  public void should_throw_UnableToCancelReservationException_when_reservation_does_not_exist() {
+    //given
+    String login = "login";
+    String email = "email";
+    String lectureSubject="subject";
+    UsersEntity user = UsersEntity.builder().id(UUID.randomUUID()).email(email).login(login).build();
+    LectureEntity lecture=LectureEntity.builder().id(UUID.randomUUID()).subject(lectureSubject).build();
+    //when
+    when(usersRepository.findUsersEntityByLoginAndEmail(login,email)).thenReturn(Optional.of(user));
+    when(lectureRepository.findLectureEntityBySubject(lectureSubject)).thenReturn(Optional.empty());
+    when(reservationRepository.deleteByUserIdAndLectureId(user.getId(),lecture.getId())).thenReturn(0);
+    //then
+    assertThrows(UnableToCancelReservationException.class, () ->
+        service.cancelReservation(email,login,lectureSubject));
+  }
+
+  @Test
+  public void should_cancel_reservation_when_data_are_correct() {
+    //given
+    String login = "login";
+    String email = "email";
+    String lectureSubject="subject";
+    ArgumentCaptor<UUID> argumentUser = ArgumentCaptor.forClass(UUID.class);
+    ArgumentCaptor<UUID> argumentLecture = ArgumentCaptor.forClass(UUID.class);
+    UsersEntity user = UsersEntity.builder().id(UUID.randomUUID()).email(email).login(login).build();
+    LectureEntity lecture=LectureEntity.builder().id(UUID.randomUUID()).subject(lectureSubject).build();
+    //when
+    when(usersRepository.findUsersEntityByLoginAndEmail(login,email)).thenReturn(Optional.of(user));
+    when(lectureRepository.findLectureEntityBySubject(lectureSubject)).thenReturn(Optional.of(lecture));
+    when(reservationRepository.deleteByUserIdAndLectureId(user.getId(),lecture.getId())).thenReturn(1);
+    service.cancelReservation(email,login,lectureSubject);
+    //then
+    verify(reservationRepository).deleteByUserIdAndLectureId(
+        argumentUser.capture(),
+        argumentLecture.capture()
+    );
+    assertEquals(argumentUser.getValue(), user.getId());
+    assertEquals(argumentLecture.getValue(), lecture.getId());
   }
 }

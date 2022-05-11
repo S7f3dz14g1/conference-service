@@ -80,9 +80,18 @@ class ReservationServiceImpl implements ReservationService {
   }
 
   @Override
-  public void cancelReservation(UUID reservationId, UUID userId) {
-    var result =reservationRepository.deleteByIdAndUserId(reservationId,userId);
-    if(result==0)
-      throw new UnableToCancelReservationException();
+  public void cancelReservation(String email, String login, String lecture_subject) {
+    Optional<UsersEntity> user = usersRepository.findUsersEntityByLoginAndEmail(login, email);
+    Optional<LectureEntity> lecture = lectureRepository.findLectureEntityBySubject(lecture_subject);
+    user.ifPresent(
+        u -> lecture.ifPresent(
+            l -> {
+              int numberOfReservation = reservationRepository.deleteByUserIdAndLectureId(u.getId(), l.getId());
+              if (numberOfReservation == 0)
+                throw new UnableToCancelReservationException();
+            })
+    );
+    user.orElseThrow(UnableToCancelReservationException::new);
+    lecture.orElseThrow(UnableToCancelReservationException::new);
   }
 }

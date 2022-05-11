@@ -60,3 +60,18 @@ Zapisałeś się na prelekcje LectureEntity(id=291667e2-52ab-4133-810d-b2e64b3c1
 data wysłania  2022-05-10 
 do login
 Zapisałeś się na prelekcje LectureEntity(id=6e84f1b8-dc17-40af-a9d0-32f0160a016b, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=0bd1c272-5da0-486c-83d9-e86c0b8496f1, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=3f167e28-e795-4773-9236-e37c7710f94a, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=d7c152dc-4de2-45d2-b2d5-8928fe3c1478, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=bb91bf25-6d9c-4abc-9192-3563aa71ebc6, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-11 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=e4670f67-cc1b-4c0e-a93e-be1a23c3fe5f, subject=title, thematicPathsTitle=t, times=tim)
