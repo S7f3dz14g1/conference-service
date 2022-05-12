@@ -68,7 +68,7 @@ class LectureControllerTest {
         .build()));
     //then
     this.mockMvc
-        .perform(MockMvcRequestBuilders.get("/lecture/").header("login", login))
+        .perform(MockMvcRequestBuilders.get("/lecture/").param("login", login))
         .andExpect(status().isOk());
   }
 

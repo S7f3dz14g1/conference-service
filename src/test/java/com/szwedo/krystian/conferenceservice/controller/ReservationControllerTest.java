@@ -34,11 +34,7 @@ class ReservationControllerTest {
     //when
     service.reservationToLecture(request);
     //then
-//    Assertions
-//        .assertThatThrownBy(() -> this.mockMvc
-//            .perform(MockMvcRequestBuilders.get("/reservation/").param("login", login))
-//            .andExpect(status().isNotFound())
-//            .andExpect(content().string("The user with login " + login + " does not found")));
+
   }
 
   private ReservationRequest getRequest() {
@@ -48,4 +44,11 @@ class ReservationControllerTest {
         .title_lecture("title")
         .build();
   }
+
+//  @Test
+//  public void should_return_conference_information() throws Exception {
+//   this.mockMvc
+//            .perform(MockMvcRequestBuilders.get("/lecture/"))
+//            .andExpect(status().isOk());
+//  }
 }

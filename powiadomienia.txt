@@ -126,3 +126,24 @@ Zapisa?e? si? na prelekcje LectureEntity(id=c495bb94-f4a1-4de5-bbc4-bac04cd37e56
 data wys?ania  2022-05-12 
 do login
 Zapisa?e? si? na prelekcje LectureEntity(id=33c9e6f4-e76f-433e-a0ff-b1416bd43cc4, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=d03ea0b6-1b84-4a07-9f1e-7e64bd4c80ed, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=354ad5b4-142a-4529-83be-1aba5d8601fc, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-12 
+do tomasz
+Zapisałeś się na prelekcje LectureEntity(id=1e95016b-140f-4754-84a2-9318929826fe, subject=Podstawy springa, thematicPathsTitle=First, times=14.00 - 15-45)
+data wysłania  2022-05-12 
+do todsamasz
+Zapisałeś się na prelekcje LectureEntity(id=1e95016b-140f-4754-84a2-9318929826fe, subject=Podstawy springa, thematicPathsTitle=First, times=14.00 - 15-45)
+data wysłania  2022-05-12 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=d8032f72-be4d-423d-8f02-677554b42e87, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-12 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=e4becc02-1157-4e7f-9f30-bbf0dc8052ad, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-12 
+Do tomasz
+Zapisałeś się na prelekcje LectureEntity(id=b501b0e6-c633-45f6-8a9c-6b4f9d54d677, subject=Podstawy springa, thematicPathsTitle=First, times=14.00 - 15-45)

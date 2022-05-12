@@ -12,8 +12,8 @@ public class File {
     try {
       FileWriter writer = new FileWriter("powiadomienia.txt", true);
 
-      writer.append("\ndata wysłania  ").append(LocalDate.now().toString());
-      writer.append(" \ndo ").append(login);
+      writer.append("\nData wysłania  ").append(LocalDate.now().toString());
+      writer.append(" \nDo ").append(login);
       writer.append("\nZapisałeś się na prelekcje ").append(lecture.toString());
 
       writer.close();

@@ -31,6 +31,14 @@ INSERT INTO Users(login,email)
 values ('S7f3dz14g1','krystianszwedo@wp.pl');
 INSERT INTO Users(login,email)
 values ('antek','ant@wp.pl');
+INSERT INTO Users(login,email)
+values ('tomasz','tomasz@wp.pl');
+INSERT INTO Users(login,email)
+values ('lucek','lucek@wp.pl');
+INSERT INTO Users(login,email)
+values ('mrozu','mrozu@wp.pl');
+INSERT INTO Users(login,email)
+values ('y','y@wp.pl');
 
 INSERT INTO Lecture(times,thematic_paths_title,subject)
 values ('10.00 - 11-45','First','Java od zera.');
@@ -60,4 +68,20 @@ values ((SELECT id FROM Users where login = 'antek'),
 INSERT INTO Reservations(user_id,lecture_id)
 values ((SELECT id FROM Users where login = 'S7f3dz14g1'),
     (SELECT id FROM Lecture where subject = 'Python od zera.'));
+
+INSERT INTO Reservations(user_id,lecture_id)
+values ((SELECT id FROM Users where login = 'tomasz'),
+        (SELECT id FROM Lecture where subject = 'Python od zera.'));
+
+INSERT INTO Reservations(user_id,lecture_id)
+values ((SELECT id FROM Users where login = 'lucek'),
+        (SELECT id FROM Lecture where subject = 'Python od zera.'));
+
+INSERT INTO Reservations(user_id,lecture_id)
+values ((SELECT id FROM Users where login = 'mrozu'),
+        (SELECT id FROM Lecture where subject = 'Python od zera.'));
+
+INSERT INTO Reservations(user_id,lecture_id)
+values ((SELECT id FROM Users where login = 'y'),
+        (SELECT id FROM Lecture where subject = 'Python od zera.'));
 
