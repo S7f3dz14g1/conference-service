@@ -13,6 +13,8 @@ public interface ReservationRepository extends CrudRepository<ReservationEntity,
 
   int countAllByLectureId(UUID lectureId);
 
+  List<ReservationEntity> findAll();
+
   @Transactional
-  int deleteByUserIdAndLectureId(UUID userId,UUID lectureId);
+  int deleteByUserIdAndLectureId(UUID userId, UUID lectureId);
 }
