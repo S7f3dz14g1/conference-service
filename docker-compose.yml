@@ -3,10 +3,29 @@ services:
   postgres:
     image: postgres:12
     ports:
-      - "5455:5432"
+      - "5432:5432"
     environment:
       POSTGRES_DB: "conference"
       POSTGRES_USER: "conference"
       POSTGRES_PASSWORD: "conference"
     volumes:
       - ./src/main/resources/docker/:/docker-entrypoint-initdb.d/
+    networks:
+      - spring-app
+  server:
+    container_name: conference_service
+    build:
+      context: ../conference-service
+      dockerfile: Dockerfile
+    image: conference_service:latest
+    depends_on:
+      - postgres
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-app
+networks:
+    spring-app:
+        driver: bridge
