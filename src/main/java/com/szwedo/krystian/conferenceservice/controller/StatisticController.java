@@ -1,6 +1,7 @@
 package com.szwedo.krystian.conferenceservice.controller;
 
 import com.szwedo.krystian.conferenceservice.model.LectureStatistic;
+import com.szwedo.krystian.conferenceservice.model.ThematicPathsStatistic;
 import com.szwedo.krystian.conferenceservice.service.StatisticService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,13 @@ class StatisticController {
 
   private final StatisticService service;
 
-  @GetMapping("/")
-  public List<LectureStatistic> getAllUsers() {
+  @GetMapping("/lectureStatistics")
+  public List<LectureStatistic> getLectureStatistics() {
     return service.getLectureStatistics();
+  }
+
+  @GetMapping("/thematicPathsStatistic")
+  public List<ThematicPathsStatistic> getThematicPathsStatistics() {
+    return service.getThematicPathsStatistics();
   }
 }

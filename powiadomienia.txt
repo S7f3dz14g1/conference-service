@@ -81,3 +81,48 @@ Zapisałeś się na prelekcje LectureEntity(id=5f241637-1be0-4067-94a1-1f23dbfc7
 data wysłania  2022-05-11 
 do login
 Zapisałeś się na prelekcje LectureEntity(id=d2018de1-55cf-4fba-b92e-df6e6fdaa0da, subject=title, thematicPathsTitle=t, times=tim)
+data wysłania  2022-05-12 
+do login
+Zapisałeś się na prelekcje LectureEntity(id=f6ab8509-f0dd-48f7-ad8f-6470724a3213, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=43316bed-0c11-4f54-bb31-3b53a139ead1, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=92b6f39a-544a-42e6-8909-33c50cdeffc7, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=d5f71cae-fae2-4da4-b407-ec185c595dff, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=45b1a42b-a045-4de9-ac75-77cb8879aaaf, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=ae659865-0eb4-4882-8202-65a59eb841bd, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=2dd42d36-e9a6-4844-9089-b0e2ebbf96cc, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=89a3d468-9a62-4378-aa59-43defb7d2c93, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=3b817a33-d6a4-40e6-b0d9-1a4c52e2846e, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=e7078ef2-c9e9-463d-8756-c06779fd2b21, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=b7e760f5-54ee-4b94-96cd-369f426542b9, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=111a9616-b485-443d-8180-800fcfae0c5b, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=9efe47fa-5e09-40ca-8c23-d5b9914bf451, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=c495bb94-f4a1-4de5-bbc4-bac04cd37e56, subject=title, thematicPathsTitle=t, times=tim)
+data wys?ania  2022-05-12 
+do login
+Zapisa?e? si? na prelekcje LectureEntity(id=33c9e6f4-e76f-433e-a0ff-b1416bd43cc4, subject=title, thematicPathsTitle=t, times=tim)
