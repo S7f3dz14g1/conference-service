@@ -147,3 +147,39 @@ Zapisałeś się na prelekcje LectureEntity(id=e4becc02-1157-4e7f-9f30-bbf0dc805
 Data wysłania  2022-05-12 
 Do tomasz
 Zapisałeś się na prelekcje LectureEntity(id=b501b0e6-c633-45f6-8a9c-6b4f9d54d677, subject=Podstawy springa, thematicPathsTitle=First, times=14.00 - 15-45)
+Data wysłania  2022-05-12 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=4fff1b74-5f48-45ba-b9ca-0a1f558dab8f, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-12 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=00ee5b28-526a-4227-9ca0-d809584122f7, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-12 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=4db26ee1-f528-4175-8227-dfc5b7559934, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-12 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=e07a9538-0f76-40a5-9a37-aa2e487db607, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=5edc35de-cdf6-4047-b0e0-d4ef25ca85c3, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=113330a1-ffdb-4ce0-ba2c-e9546b716480, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=0eea8885-42c8-4fd1-a061-37782bf01248, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=c2602346-8743-4fed-8a8c-446d04fca0ce, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=fd600680-8bac-43b5-b13e-9883d1613f01, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=8f282b80-d42a-482a-abae-c3c2c0264f21, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=881c9eee-a0ce-4d76-ab5f-22c321d216ee, subject=title, thematicPathsTitle=t, times=tim)
+Data wysłania  2022-05-13 
+Do login
+Zapisałeś się na prelekcje LectureEntity(id=b47dc806-cda7-490c-abfd-5d17dbe8a42e, subject=title, thematicPathsTitle=t, times=tim)

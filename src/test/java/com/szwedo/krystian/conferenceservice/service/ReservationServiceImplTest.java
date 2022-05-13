@@ -13,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
@@ -133,13 +132,15 @@ class ReservationServiceImplTest {
 //    when(lectureRepository.findLectureEntityBySubject(request.title_lecture())).thenReturn(Optional.of(lecture));
 //    when(reservationRepository.countAllByLectureId(lecture.getId())).thenReturn(numberOfOccupiedPlaces);
 //    when(usersRepository.findUsersEntityByLoginAndEmail(request.login(), request.email())).thenReturn(Optional.empty());
+//    when(lectureRepository.findLectureEntitiesByTimes(lecture.getTimes())).thenReturn(List.of(lecture));
+//    when(reservationRepository.findAllByUserId(user.getId())).thenReturn(List.of());
 //    when(usersRepository.countUsersEntitiesByLogin(user.getLogin())).thenReturn(0);
 //    when(usersRepository.save(UsersEntity.builder().login(user.getLogin()).email(user.getEmail()).build())).thenReturn(user);
 //    service.reservationToLecture(request);
 //    //then
-////    verify(usersRepository).save(argumentUsersEntity.capture());
-////    assertEquals(argumentUsersEntity.getValue().getLogin(), user.getLogin());
-////    assertEquals(argumentUsersEntity.getValue().getEmail(), user.getEmail());
+//    verify(usersRepository).save(argumentUsersEntity.capture());
+//    assertEquals(argumentUsersEntity.getValue().getLogin(), user.getLogin());
+//    assertEquals(argumentUsersEntity.getValue().getEmail(), user.getEmail());
 //    verify(reservationRepository).save(argumentReservationEntity.capture());
 //    assertEquals(argumentReservationEntity.getValue().getLectureId(), lecture.getId());
 //    assertEquals(argumentReservationEntity.getValue().getUserId(), user.getId());

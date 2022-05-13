@@ -1,42 +1,38 @@
 package com.szwedo.krystian.conferenceservice.controller;
 
-import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
-import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.exception.UserNotFoundException;
 import com.szwedo.krystian.conferenceservice.model.ThematicPaths;
 import com.szwedo.krystian.conferenceservice.service.LectureService;
-import org.assertj.core.api.Assertions;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@WebMvcTest(controllers = LectureController.class)
 class LectureControllerTest {
 
+  @MockBean
   private LectureService service;
+  @Autowired
+  private WebApplicationContext context;
+  @Autowired
   private MockMvc mockMvc;
 
-  @BeforeEach
-  void setUp() {
-    service = mock(LectureService.class);
-    mockMvc = MockMvcBuilders
-        .standaloneSetup(new LectureController(service))
-        .build();
-  }
-
   @Test
-  public void should_return_the_list_of_ThematicPath() throws Exception {
+  public void getConferenceInformation_endpoint_should_return_200_status() throws Exception {
     //given
     Map<String, String> lecture = new HashMap<>();
     lecture.put("time", "subject");
@@ -47,7 +43,7 @@ class LectureControllerTest {
         .build()));
     //then
     this.mockMvc
-        .perform(MockMvcRequestBuilders.get("/lecture/"))
+        .perform(get("/lecture/"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.size()", Matchers.is(1)))
         .andExpect(jsonPath("$[0].title").value("First"))
@@ -55,43 +51,28 @@ class LectureControllerTest {
   }
 
   @Test
-  public void should_return_the_list_of_lectures() throws Exception {
+  public void getLecturesByLogin_endpoint_should_return_200_status() throws Exception {
     //given
     String login = "login";
-    //when
-    when(service.getLecturesByLogin(login)).thenReturn(List.of(LectureEntity.
-        builder()
-        .id(UUID.randomUUID())
-        .subject("subject")
-        .times("times")
-        .thematicPathsTitle("path")
-        .build()));
     //then
     this.mockMvc
-        .perform(MockMvcRequestBuilders.get("/lecture/").param("login", login))
+        .perform(get("/lecture/", login))
         .andExpect(status().isOk());
   }
 
-  @Test
-  public void should_return_status_not_found_when_user_does_not_exist() {
-    //given
-    String login = "login";
-    //when
-    when(service.getLecturesByLogin(login)).thenThrow(UserNotFoundException.class);
-    //then
-    Assertions
-        .assertThatThrownBy(() -> this.mockMvc
-            .perform(MockMvcRequestBuilders.get("/lecture/").param("login", login))
-            .andExpect(status().isNotFound())
-            .andExpect(content().string("The user with login " + login + " does not found")));
-  }
-
-  private ReservationEntity getReservation(UUID userId, UUID lectureId) {
-    return ReservationEntity.builder()
-        .id(UUID.randomUUID())
-        .lectureId(lectureId)
-        .userId(userId)
-        .build();
-  }
+//  @Test
+//  public void getLecturesByLogin_endpoint_should_return_404_status() throws Exception {
+//    //given
+//    String login = "login";
+//    //when
+//    doThrow(new UserNotFoundException(login))
+//        .when(service).getLecturesByLogin(login);
+//    //then
+//    this.mockMvc
+//        .perform(get("/lecture/")
+//            .param("login", login))
+//        .andExpect(status().isNotFound())
+//        .andExpect(result -> assertTrue(result.getResolvedException() instanceof UserNotFoundException))
+//        .andExpect(result -> assertEquals("The user with login " + login + " does not found", result.getResolvedException().getMessage()));
+//  }
 }
-
