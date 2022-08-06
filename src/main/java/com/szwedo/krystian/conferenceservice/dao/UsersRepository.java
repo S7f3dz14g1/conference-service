@@ -12,7 +12,7 @@ public interface UsersRepository extends CrudRepository<UsersEntity, UUID> {
 
   Optional<UsersEntity> findUsersEntityByLoginAndEmail(String login, String email);
 
-  int countUsersEntitiesByLogin(String login);
+  Integer countUsersEntitiesByLogin(String login);
 
   List<UsersEntity> findAll();
 }

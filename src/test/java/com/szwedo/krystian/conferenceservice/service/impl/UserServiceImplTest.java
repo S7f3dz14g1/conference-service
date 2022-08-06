@@ -1,11 +1,11 @@
-package com.szwedo.krystian.conferenceservice.service;
+package com.szwedo.krystian.conferenceservice.service.impl;
 
 import com.szwedo.krystian.conferenceservice.dao.UsersRepository;
 import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
 import com.szwedo.krystian.conferenceservice.exception.UserEntityExistsException;
 import com.szwedo.krystian.conferenceservice.exception.UserNotFoundException;
 import com.szwedo.krystian.conferenceservice.model.UserDetails;
-import org.checkerframework.checker.units.qual.A;
+import com.szwedo.krystian.conferenceservice.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

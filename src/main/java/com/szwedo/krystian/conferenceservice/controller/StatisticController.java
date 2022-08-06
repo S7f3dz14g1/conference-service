@@ -15,15 +15,15 @@ import java.util.List;
 @RequestMapping("/statistic/")
 class StatisticController {
 
-  private final StatisticService service;
+    private final StatisticService service;
 
-  @GetMapping("/lectureStatistics")
-  public List<LectureStatistic> getLectureStatistics() {
-    return service.getLectureStatistics();
-  }
+    @GetMapping("/lectureStatistics")
+    List<LectureStatistic> getLectureStatistics() {
+        return service.getLectureStatistics();
+    }
 
-  @GetMapping("/thematicPathsStatistic")
-  public List<ThematicPathsStatistic> getThematicPathsStatistics() {
-    return service.getThematicPathsStatistics();
-  }
+    @GetMapping("/thematicPathsStatistic")
+    List<ThematicPathsStatistic> getThematicPathsStatistics() {
+        return service.getThematicPathsStatistics();
+    }
 }

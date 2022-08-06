@@ -1,5 +1,7 @@
 # conference-service
 
+REStFul API including full information about the conference.
+
 Aby uruchomić aplikację należy uruchomić serwer a następnie skorzystać z polecenia docker-compose up aby uruchomić bazę danych
 
 Endpoint do testowaina

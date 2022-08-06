@@ -4,8 +4,8 @@ import lombok.Builder;
 
 public record LectureStatistic(String subjectLecture,
                                String interest) {
-  @Builder
-  public LectureStatistic {
+    @Builder
+    public LectureStatistic {
 
-  }
+    }
 }

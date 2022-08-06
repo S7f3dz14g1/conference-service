@@ -4,8 +4,8 @@ import lombok.Builder;
 
 public record ThematicPathsStatistic(String thematic_paths_title,
                                      String interest) {
-  @Builder
-  public ThematicPathsStatistic {
+    @Builder
+    public ThematicPathsStatistic {
 
-  }
+    }
 }

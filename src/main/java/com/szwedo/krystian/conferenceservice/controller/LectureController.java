@@ -13,15 +13,15 @@ import java.util.List;
 @RequestMapping("/lecture/")
 class LectureController {
 
-  private final LectureService service;
+    private final LectureService service;
 
-  @GetMapping("/")
-  public List<ThematicPaths> getConferenceInformation() {
-    return service.getConferenceInformation();
-  }
+    @GetMapping("/")
+    List<ThematicPaths> getConferenceInformation() {
+        return service.getConferenceInformation();
+    }
 
-  @GetMapping("/{login}")
-  public List<LectureEntity> getLecturesByLogin(@PathVariable("login") String login) {
-    return service.getLecturesByLogin(login);
-  }
+    @GetMapping("/{login}")
+    List<LectureEntity> getLecturesByLogin(@PathVariable("login") String login) {
+        return service.getLecturesByLogin(login);
+    }
 }

@@ -1,4 +1,4 @@
-package com.szwedo.krystian.conferenceservice.service;
+package com.szwedo.krystian.conferenceservice.service.impl;
 
 import com.szwedo.krystian.conferenceservice.controller.ReservationRequest;
 import com.szwedo.krystian.conferenceservice.dao.LectureRepository;
@@ -8,6 +8,7 @@ import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
 import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
 import com.szwedo.krystian.conferenceservice.exception.*;
+import com.szwedo.krystian.conferenceservice.service.impl.ReservationServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

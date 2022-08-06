@@ -5,8 +5,8 @@ import lombok.Builder;
 public record UserDetails(String login,
                           String email) {
 
-  @Builder
-  public UserDetails {
+    @Builder
+    public UserDetails {
 
-  }
+    }
 }

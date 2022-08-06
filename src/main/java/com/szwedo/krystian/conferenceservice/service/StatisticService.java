@@ -5,10 +5,9 @@ import com.szwedo.krystian.conferenceservice.model.ThematicPathsStatistic;
 
 import java.util.List;
 
-
 public interface StatisticService {
 
-  List<LectureStatistic> getLectureStatistics();
+    List<LectureStatistic> getLectureStatistics();
 
-  List<ThematicPathsStatistic> getThematicPathsStatistics();
+    List<ThematicPathsStatistic> getThematicPathsStatistics();
 }

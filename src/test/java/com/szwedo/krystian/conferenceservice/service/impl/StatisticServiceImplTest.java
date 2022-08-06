@@ -1,4 +1,4 @@
-package com.szwedo.krystian.conferenceservice.service;
+package com.szwedo.krystian.conferenceservice.service.impl;
 
 import com.szwedo.krystian.conferenceservice.dao.LectureRepository;
 import com.szwedo.krystian.conferenceservice.dao.ReservationRepository;
@@ -6,6 +6,7 @@ import com.szwedo.krystian.conferenceservice.entity.LectureEntity;
 import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.model.LectureStatistic;
 import com.szwedo.krystian.conferenceservice.model.ThematicPathsStatistic;
+import com.szwedo.krystian.conferenceservice.service.impl.StatisticServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

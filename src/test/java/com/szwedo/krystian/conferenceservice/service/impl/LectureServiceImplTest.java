@@ -1,4 +1,4 @@
-package com.szwedo.krystian.conferenceservice.service;
+package com.szwedo.krystian.conferenceservice.service.impl;
 
 import com.szwedo.krystian.conferenceservice.dao.LectureRepository;
 import com.szwedo.krystian.conferenceservice.dao.ReservationRepository;
@@ -8,6 +8,7 @@ import com.szwedo.krystian.conferenceservice.entity.ReservationEntity;
 import com.szwedo.krystian.conferenceservice.entity.UsersEntity;
 import com.szwedo.krystian.conferenceservice.exception.UserNotFoundException;
 import com.szwedo.krystian.conferenceservice.model.ThematicPaths;
+import com.szwedo.krystian.conferenceservice.service.impl.LectureServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

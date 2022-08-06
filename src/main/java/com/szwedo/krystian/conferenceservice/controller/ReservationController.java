@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/reservation/")
 class ReservationController {
 
-  private final ReservationService service;
+    private final ReservationService service;
 
-  @PostMapping("/")
-  public void reservationToLecture(@RequestBody ReservationRequest request) {
-    service.reservationToLecture(request);
-  }
+    @PostMapping("/")
+    void reservationToLecture(@RequestBody ReservationRequest request) {
+        service.reservationToLecture(request);
+    }
 
-  @DeleteMapping("/")
-  public void cancelReservation(@RequestParam("login") String login,
-                                @RequestParam("email") String email,
-                                @RequestParam("lectureSubject") String lectureSubject) {
-    service.cancelReservation(email, login, lectureSubject);
-  }
+    @DeleteMapping("/")
+    void cancelReservation(@RequestParam("login") String login,
+                           @RequestParam("email") String email,
+                           @RequestParam("lectureSubject") String lectureSubject) {
+        service.cancelReservation(email, login, lectureSubject);
+    }
 }
