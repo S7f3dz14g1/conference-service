@@ -24,41 +24,36 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = LectureController.class)
 class LectureControllerTest {
 
-  @MockBean
-  private LectureService service;
-  @Autowired
-  private WebApplicationContext context;
-  @Autowired
-  private MockMvc mockMvc;
+    @MockBean
+    private LectureService service;
+    @Autowired
+    private WebApplicationContext context;
+    @Autowired
+    private MockMvc mockMvc;
 
-  @Test
-  public void getConferenceInformation_endpoint_should_return_200_status() throws Exception {
-    //given
-    Map<String, String> lecture = new HashMap<>();
-    lecture.put("time", "subject");
-    //when
-    when(service.getConferenceInformation()).thenReturn(List.of(ThematicPaths.builder()
-        .title("First")
-        .lecture(lecture)
-        .build()));
-    //then
-    this.mockMvc
-        .perform(get("/lecture/"))
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("$.size()", Matchers.is(1)))
-        .andExpect(jsonPath("$[0].title").value("First"))
-        .andExpect(jsonPath("$[0].lecture.keys()").value("[time]"));
-  }
+    @Test
+    public void getConferenceInformation_endpoint_should_return_200_status() throws Exception {
+        //given
+        Map<String, String> lecture = new HashMap<>();
+        lecture.put("time", "subject");
+        //when
+        when(service.getConferenceInformation())
+                .thenReturn(List.of(ThematicPaths.builder().title("First").lecture(lecture).build()));
+        //then
+        this.mockMvc.perform(get("/lecture/"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.size()", Matchers.is(1)))
+                .andExpect(jsonPath("$[0].title").value("First"))
+                .andExpect(jsonPath("$[0].lecture.keys()").value("[time]"));
+    }
 
-  @Test
-  public void getLecturesByLogin_endpoint_should_return_200_status() throws Exception {
-    //given
-    String login = "login";
-    //then
-    this.mockMvc
-        .perform(get("/lecture/", login))
-        .andExpect(status().isOk());
-  }
+    @Test
+    public void getLecturesByLogin_endpoint_should_return_200_status() throws Exception {
+        //given
+        String login = "login";
+        //then
+        this.mockMvc.perform(get("/lecture/", login)).andExpect(status().isOk());
+    }
 
 //  @Test
 //  public void getLecturesByLogin_endpoint_should_return_404_status() throws Exception {

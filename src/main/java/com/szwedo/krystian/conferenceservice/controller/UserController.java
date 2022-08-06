@@ -15,9 +15,9 @@ class UserController {
     private final UserService service;
 
     @PutMapping("/")
-    public void updateEmail(@RequestParam("login") String login,
-                            @RequestParam("oldEmail") String oldEmail,
-                            @RequestParam("newEmail") String newEmail) {
+    void updateEmail(@RequestParam("login") String login,
+                     @RequestParam("oldEmail") String oldEmail,
+                     @RequestParam("newEmail") String newEmail) {
         service.updateEmail(login, oldEmail, newEmail);
     }
 

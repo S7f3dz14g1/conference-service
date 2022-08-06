@@ -1,95 +1,60 @@
 # conference-service
 
-REStFul API including full information about the conference.
+REStFul API including full information about the conference. The service designed for companies wishing to manage a
+conference.
 
-Aby uruchomić aplikację należy uruchomić serwer a następnie skorzystać z polecenia docker-compose up aby uruchomić bazę danych
+## Endpoints
 
-Endpoint do testowaina
+### /lecture
 
-1.Użytkownik może obejrzeć plan konferencji.(metoda get)
- http://localhost:8080/lecture/
+* `GET` - get all lecture
 
-2.Użytkownik po podaniu swojego loginu może obejrzeć prelekcje na które się zapisał.(metoda get)
- http://localhost:8080/lecture/S7f3dz14g
+### /lecture/{login}
 
-3.Jeżeli prelekcja ma jeszcze wolne miejsca, użytkownik ma możliwość dokonania rezerwacji. Podczas dokonywania rezerwacji powinien podać swój login oraz adres e-mail.
-http://localhost:8080/reservation/
+* `GET` - get lecture by login
 
-body
-{
-"login": "tomasz",
-"email": "tomasz@wp.pl",
-"title_lecture":"Podstawy springa"
-}
+### /reservation/
 
-rejestracja na prelekcje ktorej nie istnieje
+* `POST` - lecture booking
 
-body
-{
-"login": "lucek",
-"email": "lucek@wp.pl",
-"title_lecture":"Podstawy spria"
-}
+### /reservation/{login}{email}{lectureSubject}
 
-rejestracja na prelekcje w pełni zapełnioną
+* `DELETE` - cancel reservation
 
-{
-"login": "lucek",
-"email": "lucek@wp.pl",
-"title_lecture":"Python od zera."
-}
+### /statistic/lectureStatistics
 
-4. Jeżeli w systemie istnieje już użytkownik z danym loginem, ale z innym adresem e-mail, system powinien zaprezentować komunikat „Podany login jest już zajęty”.
-   http://localhost:8080/reservation/
+* `GET` get statistic of lecture statistics
+  Method GET statistic/thematicPathsStatistic
 
-rejestracja na prelekcje w pełni zapełnioną
-{
-"login": "lucek",
-"email": "luce@wp.pl",
-"title_lecture":"Podstawy springa"
-}
+### /statistic/thematicPathsStatistic/
 
-5. Poprawne dokonanie rezerwacji skutkuje wysłaniem powiadomienia użytkownikowi na podany przez niego adres (wysyłka wiadomości - patrz wskazówki).
+* `GET` get statistic of thematic paths statistic
 
-powiadominie zpostało zapisane przy wcześniejszych zapytaniach
+### /user/{login}{oldEmail}{newEmail}
 
-6. Użytkownik może anulować rezerwację.(meotda delate)
-http://localhost:8080/user/
+* `PUT` - change user's email
 
-próba anulowania przy błędnych danych 
+### /user/
 
-błędny login
-http://localhost:8080/reservation/?login=S7f3dz14g&email=krystianszwedo@wp.pl&lectureSubject=Podstawy springa
+* `GET` get all users
 
-błędny email
-http://localhost:8080/reservation/?login=S7f3dz14g1&email=krystianszwedo@wp.p&lectureSubject=Podstawy springa
+## Technologies used
 
-błędnna nazwa wykładu
-http://localhost:8080/reservation/?login=S7f3dz14g1&email=krystianszwedo@wp.pl&lectureSubject=Podstawy spring
+* JPA
+* Docker
+* Maven
+* Spring Boot
+* Hibernate
+* Postgres
+* Mockito
+* JUnit5
 
-poprawne anulowanie
-http://localhost:8080/reservation/?login=S7f3dz14g1&email=krystianszwedo@wp.pl&lectureSubject=Python od zera.
+## Database structure
 
-7. Użytkownik może zaktualizować swój adres e-mail.(metoda put)
-   http://localhost:8080/user/?login=antek&oldEmail=ant@wp.pl&newEmail=ant@wp.p
-
-Kiedy użytkownik próbuje zaktualizować swój adres e-mail, a login jest zły
-http://localhost:8080/user/?login=ante&oldEmail=ant@wp.p&newEmail=ant@wp.p
-
-Kiedy użytkownik próbuje zaktualizować swój adres e-mail, a email jest zły
-http://localhost:8080/user/?login=antek&oldEmail=ant@wp.pl&newEmail=ant@wp.p
-
-Kiedy użytkownik próbuje zaktualizować swój adres e-mail, a itnieje taki użytkownik z takimi danymi
-http://localhost:8080/user/?login=antek&oldEmail=ant@wp.p&newEmail=ant@wp.p
- 
-8 System umożliwia wyświetlenie listy zarejestrowanych użytkowników wraz z ich adresami e-mail.(Metoda get)
-http://localhost:8080/user/
-
-9 zestawienie wykładów wg zainteresowania (Metoda get)
-http://localhost:8080/statistic/lectureStatistics/
-
-9 zestawienie ścieżek tematycznych wg zainteresowania (Metoda get)
-http://localhost:8080/statistic/thematicPathsStatistic/
-
-struktura bazy danych
 ![img.png](img.png)
+
+## How to run.
+
+* download the project
+* use 'docker compose up' command
+* run server
